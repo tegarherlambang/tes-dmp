@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "db8a2423-f79a-413d-9f01-4888d442a7fc",
+		"name": "tes dmp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14039116"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"tegar\",\r\n    \"password\":\"tegar\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}login",
+					"host": [
+						"{{URL}}login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Job List",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2ODAzNTI0ODYsImV4cCI6MTY4MDUyNTI4Nn0.Rh8iYnKnbtisNb4IpwgRxCB3PXdRzSgpJlGXtLrU4WU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}job-list?page=1",
+					"host": [
+						"{{URL}}job-list"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "location",
+							"value": "berlin",
+							"disabled": true
+						},
+						{
+							"key": "fulltime",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "description",
+							"value": "SweetRush",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}job-list/:id/detail",
+					"host": [
+						"{{URL}}job-list"
+					],
+					"path": [
+						":id",
+						"detail"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "32bf67e5-4971-47ce-985c-44b6b3860cdb"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJpYXQiOjE2ODAzNTI0ODYsImV4cCI6MTY4MDUyNTI4Nn0.Rh8iYnKnbtisNb4IpwgRxCB3PXdRzSgpJlGXtLrU4WU",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:7000/",
+			"type": "string"
+		}
+	]
+}
